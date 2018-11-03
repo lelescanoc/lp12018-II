@@ -1,0 +1,78 @@
+#include <iostream>
+#include <vector>
+#include<exception>
+#include<string.h>
+using namespace std;
+
+int main()
+try
+{
+    char jugadaoperador=' ';
+    vector<int>jugadapc;
+    jugadapc.push_back(1);
+    jugadapc.push_back(3);
+    jugadapc.push_back(1);
+    jugadapc.push_back(2);
+    jugadapc.push_back(3);
+    for(int i=0; i<opciones.size();i++){
+        cout<<"Elija su jugada: "<<endl;
+        cout<<"Si es piedra: Presione p"<<endl;
+        cout<<"Si es papel : Presione a"<<endl;
+        cout<<"Si es tijera : Presione t"<<endl;
+        cin>>jugadaoperador;
+            switch(jugadaoperador)
+			{
+                case 'p':
+                    switch(jugadapc[i])
+					{
+                        case 1:
+                            cout<<"Empataron"<<endl;
+                            break;
+                        case 2:
+                            cout<<"Usted perdio"<<endl;
+                            break;
+                        default:
+                            cout<<"Usted gano"<<endl;
+                            break;
+                    }
+                    break;
+                case 'a':
+                    switch(jugadapc[i])
+					{
+                    case 1:
+                        cout<<"usted gano"<<endl;
+                        break;
+                    case 2:
+                        cout<<"empataron"<<endl;
+                        break;
+                    default:
+                        cout<<"usted perdio"<<endl;
+                        break;
+                    }
+                    break;
+                case 't':
+                    switch(jugadapc[i])
+					{
+                    case 1:
+                        cout<<"Usted perdio"<<endl;
+                        break;
+                    case 2:
+                        cout<<"Usted gano"<<endl;
+                        break;
+                    default:
+                        cout<<"empataron"<<endl;
+                        break;
+                    }
+                    break;
+                default:
+                    throw "opcion no valida";
+                    break;
+            }
+            }
+    return 0;
+    }
+    catch(exception & e)
+	{
+        cerr<<"Error: "<<e.what()<<endl;
+        return 1;
+    }
