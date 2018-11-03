@@ -1,0 +1,37 @@
+#include <iostream>
+#include <math.h>
+#include <exception>
+using namespace std;
+
+int main()
+try
+{
+    double a;
+    double b;
+    double c;
+    double condicion1;
+    double condicion2;
+    unsigned long long solucion1;
+    unsigned long long solucion2;
+    cout << "Ingrese a:" << endl;
+    cin>>a;
+    cout << "Ingrese b:" << endl;
+    cin>>b;
+    cout << "Ingrese c:" << endl;
+    cin>>c;
+    condicion1=(pow(b,2))-(4*a*c);
+    condicion2=2*a;
+    if(condicion1<0 )
+	
+        throw runtime_error("Respuesta imaginaria"); 
+	if(condicion2==0)
+		throw runtime_error("No se puede resolver division entre 0 ");
+    solucion1=(-b+(pow(condicion1,0.5)))/condicion2;
+    solucion2=(-b-(pow(condicion1,0.5)))/condicion2;
+    cout<<"Tus respuestas son: "<<solucion1<<" y "<<solucion2;
+    return 0;
+}
+catch(exception & e){
+    cerr<<"error: "<<e.what()<<endl;
+    return 1;
+}
